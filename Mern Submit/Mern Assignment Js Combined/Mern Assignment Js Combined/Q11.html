@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .custom-bg-gray {
+            background-color: #f4f4f4;
+        }
+    </style>
+
+    <script>
+        function invalid_highlight(inputElement, lab_id, ig_id, text, textId) {
+            // inputElement.style.border = "1px solid red";
+            // document.getElementById(ig_id).style.border = "1px solid red";
+            document.getElementById(lab_id).style.color = "red";
+
+            // var textElement = document.getElementById(textId);
+            // var paragraph = document.createElement('p');
+            // var text = document.createTextNode(text);
+            // paragraph.appendChild(text);
+            // paragraph.style.color = "red";
+            // textElement.innerHTML = paragraph.outerHTML;;
+            // textElement.style.marginBottom = "-20px";
+        }
+
+        function validate() {
+            var fname = document.getElementById("fname");
+            var lname = document.getElementById("lname");
+            var email = document.getElementById("email");
+            var phone = document.getElementById("phone");
+            var address = document.getElementById("address");
+            var city = document.getElementById("city");
+
+
+            if (fname.value.length == 0) {
+                invalid_highlight(fname, "lab1", "ig1", "Please supply your first name", "r1");
+            }
+
+            if (lname.value.length == 0) {
+                invalid_highlight(lname, "lab2", "ig2", "Please supply your last name", "r2");
+            }
+
+            if (email.value.length == 0) {
+                invalid_highlight(email, "lab3", "ig3", "Please supply your email address", "r3");
+            }
+
+            if (phone.value.length == 0) {
+                invalid_highlight(phone, "lab4", "ig4", "Please supply your phone number", "r4");
+            }
+
+            if (address.value.length == 0) {
+                invalid_highlight(address, "lab5", "ig5", "Please supply your street address", "r5");
+            }
+
+            if (city.value.length == 0) {
+                invalid_highlight(city, "lab6", "ig6", "Please supply your city", "r6");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 ">
+                <div class="card custom-bg-gray">
+                    <div class="card-body">
+                        <form action="" class="was-validated">
+                            <div class="form-group row">
+                                <label for="fname" class="col-lg-3 col-form-label" id="lab1">First Name</label>
+                                <div class="col-9 ">
+                                    <div class="input-group" id="ig1">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="fname" placeholder="First Name" required>
+                                        <div class="invalid-feedback">Please supply your first name</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="lname" class="col-lg-3 col-form-label" id="lab2">Last Name</label>
+                                <div class="col-9 ">
+                                    <div class="input-group" id="ig2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="lname" placeholder="Last Name" required>
+                                        <div class="invalid-feedback">Please supply your last name</div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email" class="col-lg-3 col-form-label" id="lab3">Email</label>
+                                <div class="col-9 ">
+                                    <div class="input-group" id="ig3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="E-mail Address" required>
+                                            <div class="invalid-feedback">Please supply your email address</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="phone" class="col-lg-3 col-form-label" id="lab4">Phone #</label>
+                                <div class="col-9 ">
+                                    <div class="input-group" id="ig4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-telephone-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <input type="tel" class="form-control" id="phone" placeholder="(845)555-1212" required>
+                                        <div class="invalid-feedback">Please supply your phone number</div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="qddress" class="col-lg-3 col-form-label" id="lab5">Address</label>
+                                <div class="col-9 ">
+                                    <div class="input-group" id="ig5">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
+                                                    <path
+                                                        d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="address" placeholder="Address" required>
+                                        <div class="invalid-feedback">Please supply your street address</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="city" class="col-lg-3 col-form-label" id="lab6">City</label>
+                                <div class="col-9 ">
+                                    <div class="input-group" id="ig6">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-houses-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M7.207 1a1 1 0 0 0-1.414 0L.146 6.646a.5.5 0 0 0 .708.708L1 7.207V12.5A1.5 1.5 0 0 0 2.5 14h.55a2.51 2.51 0 0 1-.05-.5V9.415a1.5 1.5 0 0 1-.56-2.475l5.353-5.354L7.207 1Z" />
+                                                    <path
+                                                        d="M8.793 2a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708L8.793 2Z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="city" placeholder="City" required>
+                                        <div class="invalid-feedback">Please supply your city</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="state" class="col-lg-3 col-form-label">State</label>
+                                <div class="col-9 ">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z" />
+                                                    <path
+                                                        d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <select name="state" class="form-control" id="state">
+                                            <option value="none" selected disabled hidden>Please select your state</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="hosting" class="col-lg-3 col-form-label">Do you have hosting?</label>
+                                <div class="col-9">
+                                    <div class="input-group mt-2">
+                                        <input type="radio" name="hosting" id="yes">
+                                        <label class="mr-3 " for="yes">Yes</label>
+                                        <input type="radio" name="hosting" id="no">
+                                        <label for="no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label for="description" class="col-lg-3 col-form-label">Project Description</label>
+                                <div class="col-9 ">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <textarea class="form-control" name="description" id="description" rows="2"
+                                            placeholder="Project Description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary bg-warning " onclick="validate()">
+                                Send <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-send" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

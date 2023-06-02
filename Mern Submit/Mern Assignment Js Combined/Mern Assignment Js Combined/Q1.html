@@ -1,0 +1,20 @@
+<html>
+<body>
+<button onclick="myFunction()">Click me</button>
+<p id="demo"></p>
+<button onclick="myFunction1()">Click me</button>
+<p id="demo2"></p>
+<script>
+function myFunction() {
+    var a=new Date().toLocaleDateString();
+  document.getElementById("demo").innerHTML = a;
+}
+function myFunction1() {
+    var a=new Date();
+  document.getElementById("demo2").innerHTML = a;
+}
+</script>
+
+</body>
+</html>
+
