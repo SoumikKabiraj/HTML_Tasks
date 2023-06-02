@@ -1,53 +1,190 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8">
-<title>JavaScript Form Validation using a sample registration form</title>
-<meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
-<meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
-<link rel='stylesheet' href='Q3.css' type='text/css' />
-<script src="Q3.js"></script>
-</head>
-<body onload="document.registration.userid.focus();">
-    <div class="container1">
-        <div class="container2">
+<!doctype html>
+<html lang="en">
 
-            <h1>Registration Form</h1>
-            <form name='registration' onSubmit="return formValidation();">
-            <ul>
-            <li><label for="userid">User id:</label></li>
-            <li><input class="a1" type="text" name="userid" size="12" /></li>
-            <li><label  for="passid">Password:</label></li>
-            <li><input class="a1" type="password" name="passid" size="12" /></li>
-            <li><label for="username">Name:</label></li>
-            <li><input class="a1" type="text" name="username" size="50" /></li>
-            <li><label for="address">Address:</label></li>
-            <li><input class="a1" type="text" name="address" size="50" /></li>
-            <li><label for="country">Country:</label></li>
-            <li><select name="country">
-            <option selected="" value="Default">(Please select a country)</option>
-            <option value="AF">Australia</option>
-            <option value="AL">Canada</option>
-            <option value="DZ">India</option>
-            <option value="AS">Russia</option>
-            <option value="AD">USA</option>
-            </select></li>
-            <li><label for="zip">ZIP Code:</label></li>
-            <li><input class="a1" type="text" name="zip" /></li>
-            <li><label for="email">Email:</label></li>
-            <li><input class="a1" type="text" name="email" size="50" /></li>
-            <li><label id="gender">Sex:</label></li>
-            <li><input type="radio" name="msex" value="Male" /><span>Male</span></li>
-            <li><input type="radio" name="fsex" value="Female" /><span>Female</span></li>
-            <li><label>Language:</label></li>
-            <li><input type="checkbox" name="en" value="en" checked /><span>English</span></li>
-            <li><input type="checkbox" name="nonen" value="noen" /><span>Non English</span></li>
-            <li><label for="desc">About:</label></li>
-            <li><textarea class="a1" name="desc" id="desc"></textarea></li>
-            <li><input type="submit" name="submit" value="Submit" /></li>
-            </ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <style>
+    .custom-bg-out {
+      background-color: #cb4b7a;
+    }
+
+    .custom-bg-in {
+      background-color: #742141;
+      color: white;
+    }
+  </style>
+
+  <script>
+    function validate() {
+      var nameInput = document.getElementById("name");
+      var emailInput = document.getElementById("email");
+      var passwordInput = document.getElementById("password");
+      var mobileInput = document.getElementById("mobile");
+      var genderInputs = document.getElementsByName("gender");
+      var languageInput = document.getElementById("language");
+      var zipInput = document.getElementById("zip");
+      var aboutInput = document.getElementById("about");
+
+      // Check if the name input is filled
+      if (nameInput.value === "") {
+        alert("Please enter your name.");
+        return;
+      }
+
+      // Check if the email input is filled
+      if (emailInput.value === "") {
+        alert("Please enter your email.");
+        return;
+      }
+
+      // Check if the password input is filled
+      if (passwordInput.value === "") {
+        alert("Please enter your password.");
+        return;
+      }
+
+      // Check if the mobile input is filled
+      if (mobileInput.value === "") {
+        alert("Please enter your phone number.");
+        return;
+      }
+
+      // Check if a gender option is selected
+      var genderSelected = false;
+      for (var i = 0; i < genderInputs.length; i++) {
+        if (genderInputs[i].checked) {
+          genderSelected = true;
+          break;
+        }
+      }
+      if (!genderSelected) {
+        alert("Please select your gender.");
+        return;
+      }
+
+      // Check if a language option is selected
+      if (languageInput.value === "Select language") {
+        alert("Please select a language.");
+        return;
+      }
+
+      // Check if the zip code input is filled
+      if (zipInput.value === "") {
+        alert("Please enter your zip code.");
+        return;
+      }
+
+      // Check if the about input is filled
+      if (aboutInput.value === "") {
+        alert("Please write something about yourself.");
+        return;
+      }
+
+      // If all inputs are filled, proceed with form submission or further processing
+      alert("Form validation successful. Submitting form...");
+      // Add your form submission or further processing logic here
+    }
+  </script>
+
+</head>
+
+<body class="custom-bg-out">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6"> <!-- Replaced col-md with col-lg -->
+        <div class="card custom-bg-in">
+          <div class="card-body px-5">
+            <form>
+              <div class="form-group row pb-3 px-3">
+                <label for="name" class="col-md-4 col-form-label">Name:</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" id="name" placeholder="your name">
+                </div>
+              </div>
+
+              <div class="form-group row pb-3 px-3">
+                <label for="email" class="col-md-4 col-form-label">Email:</label>
+                <div class="col-md-8">
+                  <input type="email" class="form-control" id="email" placeholder="your email">
+                </div>
+              </div>
+
+              <div class="form-group row pb-3 px-3">
+                <label for="password" class="col-md-4 col-form-label">Password:</label>
+                <div class="col-md-8">
+                  <input type="password" class="form-control" id="password">
+                </div>
+              </div>
+
+              <div class="form-group row pb-3 px-3">
+                <label for="mobile" class="col-md-4 col-form-label">Phone Number:</label>
+                <div class="col-md-8">
+                  <input type="tel" class="form-control" id="mobile" name="mobile">
+                </div>
+              </div>
+
+              <div class="form-group row pb-3 px-3">
+                <label for="gender" class="col-md-4 col-form-label">Gender:</label>
+                <div class="col-md-8">
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                    <input class="form-check-input" type="radio" name="gender" id="male">
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                    <input class="form-check-input" type="radio" name="gender" id="female">
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio2">Others</label>
+                    <input class="form-check-input" type="radio" name="gender" id="others">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row pb-3 px-3">
+                <label for="language" class="col-md-4 col-form-label">Language:</label>
+                <div class="col-md-8">
+                  <select class="form-control">
+                    <option>Select language</option>
+                    <option>English</option>
+                    <option>French</option>
+                    <option>Spanish</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row pb-3 px-3">
+                <label for="zip" class="col-md-4 col-form-label">Zip Code:</label>
+                <div class="col-md-8">
+                  <input type="number" class="form-control" id="zip">
+                </div>
+              </div>
+
+              <div class="form-group row pb-3 px-3">
+                <label for="about" class="col-md-4 col-form-label">About:</label>
+                <div class="col-md-8">
+                  <textarea name="" id="" cols="30" rows="2" class="form-control"
+                    placeholder="Write about yourself..."></textarea>
+                </div>
+              </div>
+              <div class="form-group row pb-3 px-4">
+                <button type="button" class="btn btn-light btn-block fw-bold fs-5"
+                  onclick="validate()">Register</button>
+              </div>
             </form>
+          </div>
         </div>
+      </div>
     </div>
-</form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
