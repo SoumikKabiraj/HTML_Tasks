@@ -1,0 +1,15 @@
+
+<html>
+<body>
+    <p id="demo"></p>
+<script>
+    var b=prompt("Enter a number");
+    alert(myFunction(b));
+    function myFunction(n) {
+        return n.split('').sort().join('');
+    }
+    document.getElementById("demo").innerHTML = myFunction(b);
+    </script>
+
+</body>
+</html>
