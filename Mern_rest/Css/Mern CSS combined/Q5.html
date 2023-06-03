@@ -3,42 +3,46 @@
 <head>
 <style>
 ul {
-	border: 1px solid;
+  display: flex;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   background-color: #FFFFFF;
 }
 
-li {
-border: 1px solid;
-border-color: blue;
-	background-color: #808080;
-  float: left;
-}
 
-li a {
+div{
   display: block;
-  color: white;
+  background-color: rgb(179, 179, 179);
+  margin: 3px;
+  border: 2px solid rgb(15, 15, 15);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: #111;
+div:li{
+
 }
+
+
+
+div:hover {
+  background-color: #7c7c7c;
+}
+div:hover a{
+  color: #FFFFFF;
+}
+
 </style>
 </head>
 <body>
 
 <ul>
-  <li><a class="active" href="#">Home</a></li>
-  <li><a href="#">Java</a></li>
-  <li><a href="#">Css</a></li>
-  <li><a href="#">HTML</a></li>
-  <li><a href="#">Bootstrap</a></li>
+  <li><div><a class="active" href="#">Home </a></div></li>
+  <li><div><a href="#">Java</a></div></li>
+  <li><div><a href="#">Css</a></div></li>
+  <li><div><a href="#">HTML</a></div></li>
+  <li><div><a href="#">Bootstrap</a></div></li>
 </ul>
 
 </body>
