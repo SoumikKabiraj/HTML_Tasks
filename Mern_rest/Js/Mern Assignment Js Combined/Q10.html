@@ -1,8 +1,76 @@
+<!DOCTYPE html>
 <html>
-    <head>
+<body>
+<h3>
+    Starting arrays
+</h3>
+<p>[1,2]<br>[3,4,5]<br></p>
+<h3>The concat() method concatenates (joins) two or more arrays:</h3>
+<p id="demo"></p><br>
+<h3>copyWithin() copies array elements to another position in an array, overwriting existing values:</h3>
+<p id="demo1"></p>
+<h3>map() Printing each element in different line:</h3>
+<p id="demo2"></p>
+<h3>every() returns true if all elements in an array pass a test:</h3>
+<p id="demo3"></p>
+<h3>some() returns true if some elements in an array pass a test:</h3>
+<p id="demo4"></p>
+<h3>Get every element in the array that has a value of 2 or less:</h3>
+<p id="demo5"></p>
+<h3>Get every element in the array that has a value of 3:</h3>
+<p id="demo6"></p>
+<h3>Get index of element in the array that has a value of <2:</h3>
+<p id="demo7"></p>
+<h3>Get index of element in the array that has a value of 3:</h3>
+<p id="demo8"></p>
+<h3>Get last index of element in the array that has a value of 2:</h3>
+<p id="demo9"></p>
+<h3>Pushing 7 in the array:</h3>
+<p id="demo10"></p>
+<h3>pop the array:</h3>
+<p id="demo11"></p>
+<h3>shift() removes the first item of an array:</h3>
+<p id="demo12"></p>
+<script>
+const arr1 = [1, 2];
+const arr2 = [3, 4, 5];
 
-    </head>
-    <body>
-        
-    </body>
+const arr3 = arr1.concat(arr2); 
+document.getElementById("demo").innerHTML = arr3;
+document.getElementById("demo1").innerHTML = arr3.copyWithin(2,0);
+document.getElementById("demo2").innerHTML = arr3.map(myFunction);
+function myFunction(num) {
+  return num+"<br>";
+}
+document.getElementById("demo3").innerHTML = arr3.every(check1);
+function check1(no) {
+  return no > 3;
+}
+document.getElementById("demo4").innerHTML = arr3.some(check2);
+function check2(no) {
+  return no < 3;
+}
+document.getElementById("demo5").innerHTML = arr3.filter(check3);
+function check3(no) {
+  return no <=2;
+}
+document.getElementById("demo6").innerHTML = arr3.find(check4);
+function check4(no) {
+  return no ===3;
+}
+document.getElementById("demo7").innerHTML = arr3.findIndex(check5);
+function check5(no) {
+  return no <2;
+}
+document.getElementById("demo8").innerHTML = arr3.indexOf(3);
+document.getElementById("demo9").innerHTML = arr3.lastIndexOf(2);
+arr3.push(7);
+document.getElementById("demo10").innerHTML = arr3;
+arr3.pop();
+document.getElementById("demo11").innerHTML = arr3;
+arr3.shift();
+document.getElementById("demo12").innerHTML = arr3;
+</script>
+
+</body>
 </html>
